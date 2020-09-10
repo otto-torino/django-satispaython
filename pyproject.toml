@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "django-satispaython"
+version = "0.0.0"
+description = "A simple django app to manage Satispay payments following the Web-button flow."
+license = "GPL-3.0-or-later"
+authors = ["Daniele Pira <daniele.pira@otto.to.it>"]
+readme = "README.md"
+repository = "https://github.com/otto-torino/django-satispaython"
+keywords = ["python", "django", "satispay"]
+classifiers = ["Framework :: Django"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+django = "^3"
+satispaython = "*"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

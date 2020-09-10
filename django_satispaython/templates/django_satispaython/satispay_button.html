@@ -1,0 +1,15 @@
+{% if staging %}
+
+    <script
+      src="https://staging.online.satispay.com/web-button.js"
+      data-payment-id="{{ payment_id }}"
+    ></script>
+
+{% else %}
+
+    <script
+      src="https://online.satispay.com/web-button.js"
+      data-payment-id="{{ payment_id }}"
+    ></script>
+
+{% endif %}
