@@ -56,7 +56,7 @@ Then you can:
 * **Create a payment**
 
   ```python
-  satispay.create_payment(amount_unit, currency, callback_url, expiration_date=None, external_code=None, metadata=None, idempotency_key=None, update=False)
+  satispay.create_payment(amount_unit, currency, callback_url, expiration_date=None, external_code=None, metadata=None, idempotency_key=None)
   ```
 
   You may use satispaython utility function [`format_datetime`](https://github.com/otto-torino/satispaython#satispay-api) to get a correctly formatted `expiration_date` to supply to the request.
@@ -64,11 +64,18 @@ Then you can:
 * **Get payment details**
 
   ```python
-  satisapy.get_payment_details(payment_id, update=False)
+  satisapy.get_payment_details(payment_id)
   ```
 
-All these functions return an instance of the SatispayPayment model without actually saving it.
-If you want to save a newly create payment in the database or update an already existing one with the informations provided by the response, set the `update` parameter to `True`.
+> :information_source: All these functions return an instance of the SatispayPayment model *without* actually saving it.
+
+If you want to save a newly created payment in the database or update an already existing one with the informations provided by the response, set the `update` parameter to `True`.
+
+```python
+satispay.create_payment(amount_unit, currency, callback_url, expiration_date=None, external_code=None, metadata=None, idempotency_key=None, update=False)
+satisapy.get_payment_details(payment_id, update=False)
+```
+
 In this case an output similar to django's [`update_or_create`](https://docs.djangoproject.com/en/3.1/ref/models/querysets/#update-or-create) will be returned.
 
 ## TODOS
