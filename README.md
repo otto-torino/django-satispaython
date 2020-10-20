@@ -17,7 +17,7 @@ You can install this package with pip: `pip install django-satispaython`.
 ### Key generation and key-id
 
 In order to use django-satispaython you need to generate a [RSA private key](https://developers.satispay.com/reference#genereate-rsa-keys) and then get a [key-id](https://developers.satispay.com/reference#keyid).
-Django-satispaython is based on satispaython so you can import it, [create a key](https://github.com/otto-torino/satispaython#key-generation) and [get a key-id](https://github.com/otto-torino/satispaython#satispay-api).
+Django-satispaython is based on [satispaython](https://github.com/otto-torino/satispaython) so you can import it, [create a key](https://github.com/otto-torino/satispaython#key-generation) and [obtain a key-id](https://github.com/otto-torino/satispaython#obtain-a-key-id-using-a-token).
 
 ### Configuration
 
@@ -53,23 +53,23 @@ from django_satispaython import api as satispay
 
 Then you can:
 
-* **Create a payment**
+#### Create a payment
 
-  ```python
-  satispay.create_payment(amount_unit, currency, callback_url, expiration_date=None, external_code=None, metadata=None, idempotency_key=None)
-  ```
+```python
+satispay.create_payment(amount_unit, currency, callback_url, expiration_date=None, external_code=None, metadata=None, idempotency_key=None)
+```
 
-  You may use satispaython utility function [`format_datetime`](https://github.com/otto-torino/satispaython#satispay-api) to get a correctly formatted `expiration_date` to supply to the request.
+You may use satispaython utility function [`format_datetime`](https://github.com/otto-torino/satispaython#create-a-payment) to get a correctly formatted `expiration_date` to supply to the request.
 
-* **Get payment details**
+#### Get payment details
 
-  ```python
-  satisapy.get_payment_details(payment_id)
-  ```
+```python
+satisapy.get_payment_details(payment_id)
+```
 
-> :information_source: All these functions return an instance of the SatispayPayment model *without* actually saving it.
+> :information_source: All these functions return an instance of the SatispayPayment model *without* actually storing it.
 
-If you want to save a newly created payment in the database or update an already existing one with the informations provided by the response, set the `update` parameter to `True`.
+If you want to store a newly created payment in the database or update an already existing one with the informations provided by the response, set the `update` parameter to `True`.
 
 ```python
 satispay.create_payment(amount_unit, currency, callback_url, expiration_date=None, external_code=None, metadata=None, idempotency_key=None, update=False)
