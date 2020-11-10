@@ -81,9 +81,9 @@ Note that the button will automatically point at the endpoint (production or san
 
 ## Database and Admin
 
-Django-satispaython comes with a SatispayPayment model which contains every info associated to a payment and automatically show it in the admin page.
+Django-satispaython comes with a SatispayPayment model which contains every info associated to a payment and is automatically showed in the admin page.
 
-> :information_source: All the Satispay API functions return an instance of the SatispayPayment model *without* actually storing it.
+> :information_source: All the Satispay API functions return an instance of the SatispayPayment model *without* actually storing it by default.
 
 If you want to store a newly created payment in the database or update an already existing one with the informations provided by the response, set the `update` parameter to `True`.
 
