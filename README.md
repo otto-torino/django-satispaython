@@ -67,13 +67,29 @@ You may use satispaython utility function [`format_datetime`](https://github.com
 satisapy.get_payment_details(payment_id)
 ```
 
-> :information_source: All these functions return an instance of the SatispayPayment model *without* actually storing it.
+## Templatetags
+
+In order to render the Satispay button just load the tag and use it in the template:
+
+```
+{% load django_satispaython %}
+...
+{% satispay_button payment_id=<your_payment_id> %}
+```
+
+Note that the button will automatically point at the endpoint (production or sandbox) specified in the project [`settings`](https://github.com/otto-torino/django-satispaython#configuration).
+
+## Database and Admin
+
+Django-satispaython comes with a SatispayPayment model which contains every info associated to a payment and automatically show it in the admin page.
+
+> :information_source: All the Satispay API functions return an instance of the SatispayPayment model *without* actually storing it.
 
 If you want to store a newly created payment in the database or update an already existing one with the informations provided by the response, set the `update` parameter to `True`.
 
 ```python
-satispay.create_payment(amount_unit, currency, callback_url, expiration_date=None, external_code=None, metadata=None, idempotency_key=None, update=False)
-satisapy.get_payment_details(payment_id, update=False)
+satispay.create_payment(amount_unit, currency, callback_url, expiration_date=None, external_code=None, metadata=None, idempotency_key=None, update=True)
+satisapy.get_payment_details(payment_id, update=True)
 ```
 
 In this case an output similar to django's [`update_or_create`](https://docs.djangoproject.com/en/3.1/ref/models/querysets/#update-or-create) will be returned.

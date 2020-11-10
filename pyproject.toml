@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-satispaython"
-version = "0.1.2"
+version = "0.1.3"
 description = "A simple django app to manage Satispay payments following the Web-button flow."
 license = "GPL-3.0-or-later"
 authors = ["Daniele Pira <daniele.pira@otto.to.it>"]
