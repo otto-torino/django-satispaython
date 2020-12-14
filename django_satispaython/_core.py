@@ -2,6 +2,7 @@ import json
 
 from satispaython.utils import load_key
 from .models import SatispayPayment
+from .exceptions import ResponseStatusError
 from django.conf import settings
 
 

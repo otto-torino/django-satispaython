@@ -98,3 +98,12 @@ In this case an output similar to django's [`update_or_create`](https://docs.dja
 
 * Signals
 * ImproperlyConfiguredException
+
+## Tests
+
+In order to run the provided tests:
+
+- create a virtualenv
+- install `tests/requirements_test.txt` packages
+- run the tests (inside the tests folder):    
+  `$ python manage.py test`
