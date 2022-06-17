@@ -64,7 +64,7 @@ You may use satispaython utility function [`format_datetime`](https://github.com
 #### Get payment details
 
 ```python
-satisapy.get_payment_details(payment_id)
+satispay.get_payment_details(payment_id)
 ```
 
 ## Templatetags
@@ -89,7 +89,7 @@ If you want to store a newly created payment in the database or update an alread
 
 ```python
 satispay.create_payment(amount_unit, currency, callback_url, expiration_date=None, external_code=None, metadata=None, idempotency_key=None, update=True)
-satisapy.get_payment_details(payment_id, update=True)
+satispay.get_payment_details(payment_id, update=True)
 ```
 
 In this case an output similar to django's [`update_or_create`](https://docs.djangoproject.com/en/3.1/ref/models/querysets/#update-or-create) will be returned.
