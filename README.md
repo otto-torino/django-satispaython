@@ -64,7 +64,7 @@ You may use satispaython utility function [`format_datetime`](https://github.com
 #### Get payment details
 
 ```python
-satisapy.get_payment_details(payment_id)
+satispay.get_payment_details(payment_id)
 ```
 
 ## Templatetags
